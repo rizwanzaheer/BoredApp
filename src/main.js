@@ -3,9 +3,16 @@ import App from './app'
 import router from '@router'
 import store from '@state/store'
 import '@components/_globals'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
 
 // Don't warn about using the dev version of Vue in development.
 Vue.config.productionTip = process.env.NODE_ENV === 'production'
+
+Vue.use(Vuetify, {
+  iconfont: 'mdi', // 'md' || 'mdi' || 'fa' || 'fa4'
+})
 
 // If running inside Cypress...
 if (process.env.VUE_APP_TEST === 'e2e') {

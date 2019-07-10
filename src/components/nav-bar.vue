@@ -1,9 +1,7 @@
 <script>
 import { authComputed } from '@state/helpers'
-import NavBarRoutes from './nav-bar-routes'
 
 export default {
-  components: { NavBarRoutes },
   data() {
     return {
       persistentNavRoutes: [
@@ -37,11 +35,16 @@ export default {
 </script>
 
 <template>
-  <ul :class="$style.container">
-    <NavBarRoutes :routes="persistentNavRoutes" />
-    <NavBarRoutes v-if="loggedIn" :routes="loggedInNavRoutes" />
-    <NavBarRoutes v-else :routes="loggedOutNavRoutes" />
-  </ul>
+  <v-toolbar>
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-title>Title</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat>Link One</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>Link Three</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
 </template>
 
 <style lang="scss" module>

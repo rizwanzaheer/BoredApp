@@ -7,17 +7,21 @@ export default {
 </script>
 
 <template>
-  <div :class="$style.container">
-    <NavBar />
-    <slot />
-  </div>
+  <VApp>
+    <VContent>
+      <VContainer>
+        <NavBar />
+        <slot />
+      </VContainer>
+    </VContent>
+  </VApp>
 </template>
 
 <style lang="scss" module>
 @import '@design';
 
 .container {
-  min-width: $size-content-width-min;
+  min-width: 90%;
   max-width: $size-content-width-max;
   margin: 0 auto;
 }
